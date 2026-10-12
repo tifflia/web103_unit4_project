@@ -1,7 +1,20 @@
 nav {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 247, 250, 0.92);
+    box-shadow: 0 4px 18px rgba(90, 30, 60, 0.15);
     width: 100vw;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+    nav {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    #root nav h1 {
+        font-size: 2rem;
+    }
 }

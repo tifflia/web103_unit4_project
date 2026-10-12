@@ -1,17 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
 
 #root {
-    --font-family: Rubik, Verdana, sans-serif;
-    --primary: rgb(115, 2, 12);
-    --primary-hover: black;
-    --color: white;
+    --font-family: Fredoka, Verdana, sans-serif;
+    --primary: #e0457b;
+    --primary-hover: #b82d5f;
+    --primary-focus: rgba(224, 69, 123, 0.25);
+    --primary-inverse: white;
+    --color: #4a1d3a;
+    --muted-color: #8a5a78;
     --h1-color: var(--color);
     --h2-color: var(--color);
     --h3-color: var(--color);
-    --card-background-color: rgba(0, 0, 0, 0.8);
-    --card-sectionning-background-color: rgba(0, 0, 0, 0.8);
-    --form-element-active-border-color: var(--color);
-    --form-element-placeholder-color: gray;
+    --card-background-color: rgba(255, 247, 250, 0.94);
+    --card-sectionning-background-color: rgba(255, 247, 250, 0.94);
+    --card-box-shadow: 0 6px 24px rgba(90, 30, 60, 0.18);
+    --form-element-background-color: white;
+    --form-element-active-background-color: white;
+    --form-element-border-color: #f3b6cc;
+    --form-element-color: var(--color);
+    --form-element-active-border-color: var(--primary);
+    --form-element-focus-color: var(--primary-focus);
+    --form-element-placeholder-color: #b48aa3;
+    color: var(--color);
 }
 
 #root h1 {

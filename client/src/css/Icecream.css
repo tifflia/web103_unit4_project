@@ -1,0 +1,228 @@
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 16px 0;
+}
+
+.icecream-preview {
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+}
+
+#root .price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    margin: 0 0 10px;
+}
+
+#root .form-error {
+    color: #b00020;
+    font-weight: 500;
+}
+
+#root .danger {
+    background-color: #fff;
+    border-color: #b00020;
+    color: #b00020;
+}
+
+#root .danger:hover {
+    background-color: #b00020;
+    color: #fff;
+}
+
+/* customizer */
+
+.customizer {
+    display: grid;
+    grid-template-columns: minmax(260px, 340px) 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.preview-card {
+    position: sticky;
+    top: 20px;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.options-card section {
+    margin-bottom: 24px;
+}
+
+.options-card h3 small {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--muted-color);
+}
+
+.option-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.option-grid.scoops {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 360px;
+}
+
+.option-grid.flavors {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+}
+
+#root .option-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    width: auto;
+    margin: 0;
+    padding: 10px 12px;
+    background-color: white;
+    color: #4a1d3a; /* not var(--color): Pico overrides --color to white on buttons */
+    border: 2px solid #f3b6cc;
+    border-radius: 14px;
+    text-transform: none;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    transition: transform 0.1s ease, border-color 0.1s ease;
+}
+
+#root .option-btn:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+#root .option-btn.selected {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.option-btn small {
+    opacity: 0.8;
+}
+
+.swatch {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #5a2e1f;
+    flex-shrink: 0;
+}
+
+/* list view */
+
+.icecream-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+#root .icecream-card {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 24px;
+}
+
+#root .icecream-card h3 {
+    line-height: 1.25;
+    margin-top: 10px;
+}
+
+.icecream-card .card-preview .icecream-preview {
+    max-width: 150px;
+}
+
+.icecream-card .card-body {
+    flex: 1;
+}
+
+#root .icecream-card footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 8px 0 0;
+    background: transparent;
+}
+
+#root .icecream-card footer [role=button],
+#root .icecream-card footer button {
+    margin: 4px;
+    padding: 6px 14px;
+}
+
+#root .icecream-facts {
+    margin: 12px 0 16px;
+    padding: 0;
+}
+
+.icecream-facts .fact {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 8px 0;
+    border-bottom: 1px dashed #f3b6cc;
+}
+
+.icecream-facts .fact:last-child {
+    border-bottom: none;
+}
+
+.icecream-facts dt {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+#root .icecream-facts dd {
+    margin: 0;
+    min-width: 0;
+    text-align: right;
+}
+
+/* details */
+
+.details-card {
+    display: grid;
+    grid-template-columns: minmax(200px, 300px) 1fr;
+    gap: 30px;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#root .details-card .price {
+    text-align: left;
+}
+
+.empty-state {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .customizer,
+    .details-card {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-card {
+        position: static;
+    }
+}
