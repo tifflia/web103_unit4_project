@@ -16,8 +16,8 @@ const iceCreamData = [
         cone: 'waffle',
         scoops: 2,
         flavor: 'mint_chip',
-        toppings: ['hot_fudge', 'whipped_cream'],
-        total_price: 7.25
+        toppings: ['sprinkles', 'whipped_cream'],
+        total_price: 6.75
     },
     {
         name: 'Triple Chocolate Cup',

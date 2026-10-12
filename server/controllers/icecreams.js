@@ -1,4 +1,5 @@
 import { pool } from '../config/database.js'
+import { validateIcecream } from '../utilities/validation.js'
 
 const getIcecreams = async (req, res) => {
     try {
@@ -25,6 +26,10 @@ const getIcecreamById = async (req, res) => {
 const createIcecream = async (req, res) => {
     try {
       const { name, cone, scoops, flavor, toppings, total_price } = req.body
+      const comboError = validateIcecream(req.body)
+      if (comboError) {
+        return res.status(400).json( { error: comboError } )
+      }
       const results = await pool.query(`
           INSERT INTO ice_creams (name, cone, scoops, flavor, toppings, total_price)
           VALUES($1, $2, $3, $4, $5, $6)
@@ -41,6 +46,10 @@ const updateIcecream = async (req, res) => {
   try {
       const id = parseInt(req.params.id)
       const { name, cone, scoops, flavor, toppings, total_price } = req.body
+      const comboError = validateIcecream(req.body)
+      if (comboError) {
+        return res.status(400).json( { error: comboError } )
+      }
       const results = await pool.query(`
           UPDATE ice_creams SET name = $1, cone = $2, scoops = $3, flavor = $4, toppings = $5, total_price = $6
           WHERE id = $7

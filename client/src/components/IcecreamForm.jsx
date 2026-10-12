@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import IcecreamPreview from './IcecreamPreview'
 import { CONES, FLAVORS, TOPPINGS, MAX_SCOOPS, SCOOP_PRICE } from '../utilities/options'
 import { calcPrice, formatPrice } from '../utilities/calcPrice'
+import { validateIcecream } from '../utilities/validation'
 import '../css/Icecream.css'
 
 const DEFAULT_ICECREAM = {
@@ -39,6 +40,12 @@ const IcecreamForm = ({ initialIcecream = DEFAULT_ICECREAM, submitLabel, onSubmi
         const name = icecream.name.trim()
         if (!name) {
             setError('Give your ice cream a name before saving.')
+            return
+        }
+
+        const comboError = validateIcecream(icecream)
+        if (comboError) {
+            setError(comboError)
             return
         }
 
